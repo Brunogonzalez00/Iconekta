@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .custom-border {
+        border-width: 5px;
+        border-top-width: 30px;
+        border-style: groove;
+        border-image: linear-gradient(to bottom right, #f60d9d, #5f0099) 1;
+        position: relative;
+        border-radius: theme('borderRadius.lg');
+    }
+}
+
+@layer utilities {
+    .bg-custom-pattern {
+        background-image: url("./Logos/bg.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}

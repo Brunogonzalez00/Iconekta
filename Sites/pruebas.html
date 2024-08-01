@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidades</title>
+    <link href="../output.css" rel="stylesheet">
+    <link href="../fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet" />
+    <link href="../fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet" />
+    <link href="../fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet" />
+
+</head>
+<body class="bg-custom-pattern bg-center">
+<header class="container mx-auto text-center py-6">
+    <img src="../Logos/iconekta-blue-tb.png" alt="Logo de la página" class="mx-auto"> <!-- Asegúrate de reemplazar 'ruta/al/logo.png' con la ruta correcta a tu archivo de imagen -->
+</header>
+<div class="container mx-auto pl-3 pr-3">
+    <!-- Filtros -->
+    <div class="bg-white p-4 rounded-lg shadow-2xl mb-4">
+        <div class="flex flex-wrap -mx-2 mb-4">
+            <input type="text" placeholder="Buscar por Nombre o Descripción..." class="w-full p-2 m-2 border rounded-lg">
+        </div>
+        <div class="flex flex-wrap -mx-2 mb-4">
+            <select class="w-full sm:w-1/2 md:w-1/3 p-2 m-2 border rounded-lg">
+                <option>País Origen de la Oportunidad</option>
+            </select>
+            <select class="w-full sm:w-1/2 md:w-1/3 p-2 m-2 border rounded-lg">
+                <option>Países de Destino de la Oportunidad</option>
+            </select>
+            <select class="w-full sm:w-1/2 md:w-1/3 p-2 m-2 border rounded-lg">
+                <option>Industrias</option>
+            </select>
+            <select class="w-full sm:w-1/2 md:w-1/3 p-2 m-2 border rounded-lg">
+                <option>Firmas de Abogados</option>
+            </select>
+            <select class="w-full sm:w-1/2 md:w-1/3 p-2 m-2 border rounded-lg">
+                <option>Tipo de Transacción</option>
+            </select>
+        </div>
+        <div class="flex flex-wrap -mx-2 mb-4">
+            <button class="w-full md:w-1/3 p-2 m-2 bg-blue-950 text-white rounded-lg hover:bg-blue-800 transition duration-300">Limpiar Filtros</button>
+        </div>
+    </div>
+<!--Aqui se podrian hacer un <li> para listar las oportunidades de la DB-->
+    <!-- Oportunidad 1 -->
+    <div class="bg-white p-4 shadow-2xl mb-4 custom-border relative rounded-lg">
+        <h1 class="text-white font-bold font-sans pt-2 -mt-[50px]">DEMANDA</h1>
+        <img src="../Logos/confidential.png" alt="Logo de Confidential" class="flex-auto size-24 object-cover rounded-full relative top-2 right-2">
+        <h2 class="pt-5 text-lg font-bold text-pink-600 mb-2">ASESORÍA JURÍDICA PARA TRÁMITE DE RESIDENCIA EN PERÚ</h2>
+        <p class="text-gray-600 mb-2"><strong>Acerca de la Oportunidad:</strong></p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-globe flex-col pr-3"></i>Argentina, Bolivia, Brasil, Chile, Colombia, Ecuador...<button class="fa-solid fa-plus-circle flex-col pl-3"></button></p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-shop flex-col pr-3"></i>Comercio al por mayor y al por menor</p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-dollar-sign flex-col pr-3"></i>$0 - $50,000</p>
+        <button class="bg-gray-200 text-gray-800 p-2 rounded-lg mb-2 hover:bg-gray-400 hover:text-black transition duration-300">Comparar Servicios</button>
+        <p class="text-gray-600 mb-2"><strong>Acerca de la Empresa:</strong> Bolivia</p>
+        <div class="bg-blue-950 p-2 rounded-lg mb-2 border bg-gradient-to-l">
+            <p class="text-white">Verificado por Indacochea & Asociados, Abogados</p>
+        </div>
+        <div class="flex pt-2 mt-2">
+            <button class="bg-gradient-to-br from-pink-600 to-purple-700 text-white p-2 rounded-lg mr-2  shadow-xl transition-colors duration-1000 hover:bg-gradient-to-tl hover:from-pink-600 hover:to-purple-700">Me Interesa</button>
+            <button class="bg-gray-200 text-gray-800 p-2 rounded-lg hover:bg-gray-400 hover:text-black transition duration-300">Ver Más</button>
+        </div>
+    </div>
+
+    <!-- Oportunidad 2 -->
+    <div class="bg-white p-4 shadow-2xl mb-4 custom-border rounded-xl">
+        <h1 class="text-white font-bold pt-2 -mt-[50px]">DEMANDA</h1>
+        <h2 class="text-lg font-bold pt-2 text-pink-600 mb-2">CAPTACIÓN DE INVERSIÓN PRE SEMILLA PARA EMPRENDIMIENTO TECNOLÓGICO</h2>
+        <p class="text-gray-600 mb-2"><strong>Acerca de la Oportunidad:</strong></p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-globe flex-col pr-3"></i>Argentina, Bolivia, Brasil, Chile, Colombia, Ecuador...<button class="fa-solid fa-plus-circle flex-col pl-3"></button></p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-shop flex-col pr-3"></i>Comercio al por mayor y al por menor</p>
+        <p class="text-gray-600 mb-2"><i class="fa-solid fa-dollar-sign flex-col pr-3"></i>$0 - $50,000</p>
+        <button class="bg-gray-200 text-gray-800 p-2 rounded-lg mb-2 hover:bg-gray-400 hover:text-black transition duration-300">Comparar Servicios</button>
+        <p class="text-gray-600 mb-2"><strong>Acerca de la Empresa:</strong> Bolivia</p>
+        <div class="bg-blue-950 p-2 rounded-lg mb-2 border bg-gradient-to-l">
+            <p class="text-white">Verificado por Indacochea & Asociados, Abogados</p>
+        </div>
+        <div class="flex pt-2 mt-2">
+            <button class="bg-gradient-to-br from-pink-600 to-purple-700 text-white p-2 rounded-lg mr-2  shadow-xl transition-colors duration-1000 hover:bg-gradient-to-tl hover:from-pink-600 hover:to-purple-700">Me Interesa</button>
+            <button class="bg-gray-200 text-gray-800 p-2 rounded-lg hover:bg-gray-400 hover:text-black transition duration-300">Ver Más</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
