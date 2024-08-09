@@ -23,6 +23,14 @@
     }
 }
 
+.font-superbold {
+    font-weight: 900; /* Puedes poner un valor mayor si es necesario, por ejemplo 950 o 1000 */
+}
+
+.phone-container:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 article {
     opacity: 0;
     transform: scale(0.25);
@@ -48,3 +56,10 @@ article.in-view {
 @media (min-width: 1025px) {
     /* Tus estilos aquí */
 }
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem; /* Espacio entre el label y el input */
+}
+

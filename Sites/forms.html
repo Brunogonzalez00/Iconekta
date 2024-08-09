@@ -8,39 +8,140 @@
     <link href="../fontawesome-free-6.6.0-web/css/fontawesome.css" rel="stylesheet" />
     <link href="../fontawesome-free-6.6.0-web/css/brands.css" rel="stylesheet" />
     <link href="../fontawesome-free-6.6.0-web/css/solid.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        .bg-custom {
+            background-color: #f7f7f7;
+            width: 100%;
+        }
+        .custom-button {
+            background-color: #673ab7;
+            color: white;
+        }
+        .custom-button:hover {
+            background-color: #5e35b1;
+            transition: ease-in-out 0.3s;
+        }
+        .accordion-header {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 5px;
+        }
+
+        .accordion-header:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #9ca3af;
+            transition: background-color 0.5s;
+
+        }
+        .accordion-content {
+            display: none;
+            padding: 10px;
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .flex-item {
+            flex: 1;
+            min-width: 45%;
+        }
+        .phone-container {
+            display: flex;
+            align-items: center;
+        }
+        .phone-container select {
+            margin-right: 10px;
+        }
+    </style>
 </head>
-<body class="bg-custom-pattern bg-center mb-14">
+<body class="bg-custom mb-14">
 <header class="text-center bg-gradient-to-b from-blue-100 to-transparent py-6">
     <img src="../Logos/iconekta-blue-tb.png" alt="Logo de la página" class="mx-auto">
 </header>
-<div class="container mx-auto pl-3 pr-3">
-    <div class="bg-white p-4 rounded-lg shadow-2xl mb-4">
-        <h2 class="text-lg font-bold text-pink-600 mb-2">Formulario de Registro</h2>
+<div class="container mx-auto pl-3 pr-3 m-0 p-0 pb-10 w-full">
+    <div class="bg-white p-4 rounded-lg shadow-2xl mb-4 w-full">
+        <h2 class="bg-gradient-to-r from-pink-500 to-indigo-500 bg-clip-text text-transparent text-4xl pl-3 pb-3 font-superbold mb-4">Carga tu oportunidad de negocio y potencia tu Firma</h2>
         <form>
-                <div>
-                    <p class="w-full m-2">Ingresa tu nombre.</p>
-                    <input type="text" placeholder="Nombre" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Por favor, ingresa tus apellidos.</p>
-                    <input type="text" placeholder="Apellidos" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Ingresa tu correo electrónico.</p>
-                    <input type="email" placeholder="Correo Electrónico" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Ingresa el nombre de tu empresa.</p>
-                    <input type="text" placeholder="Empresa" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Ingresa tu número de teléfono.</p>
-                    <input type="tel" placeholder="Número de Teléfono" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Ingresa tu contraseña.</p>
-                    <input type="password" placeholder="Contraseña" class="w-full p-2 m-2 border rounded-lg">
-                    <p class="w-full m-2">Por favor, confirma tu contraseña.</p>
-                    <input type="password" placeholder="Confirmar Contraseña" class="w-full p-2 m-2 border rounded-lg">
+            <div class="container">
+                <div class="flex-container">
+                    <input type="text" placeholder="Firma de Abogados" class="w-full flex-item p-2 m-2 border shadow rounded-lg">
+                </div>
+                <div class="flex-container">
+                    <input type="text" placeholder="Nombre" class="flex-item p-2 pr-3 m-2 border shadow rounded-lg">
+                    <input type="text" placeholder="Apellido" class="flex-item w-full p-2 m-2 border shadow rounded-lg">
+                </div>
+                <div class="flex-container">
+                    <input type="email" placeholder="Correo Electrónico" class="w-full p-2 m-2 border shadow rounded-lg">
+                </div>
+                <div class="flex-container">
+                    <select id="pais" class="flex-item p-2 m-2 border shadow rounded-lg" onchange="updateAreaCodes()">
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <!-- Más opciones de países aquí -->
+                    </select>
+                    <div class="phone-container flex-item p-2 m-2 border shadow rounded-lg">
+                        <select id="codigo-area" class="p-2 border shadow rounded-lg">
+                            <!-- Opciones de código de área se actualizarán aquí -->
+                        </select>
+                        <input type="tel" placeholder="Teléfono" class="p-2 border shadow rounded-lg">
+                    </div>
+                </div>
             </div>
-            <div class="flex flex-wrap -mx-2 mb-4 pt-4">
-                <button type="submit" class="md:w-1/4 p-2 m-2 bg-blue-950 text-white rounded-lg hover:bg-blue-800 transition duration-300">Registrar</button>
+            <div class="accordion-header bg-gradient-to-r from-pink-500 via-purple-700 to-indigo-500 bg-clip-text text-transparent text-4xl pl-3 pb-3 font-extrabold font-poppins rounded-lg mb-4" onclick="toggleAccordion()">Crea tu primera Oportunidad de Negocio</div>
+            <div class="accordion-content pr-5 transform transition duration-300">
+                <input type="text" placeholder="Título" class="w-full p-2 m-2 border rounded-lg">
+                <textarea placeholder="Descripcion" class="w-full p-2 m-2 border rounded-lg"></textarea>
+                <button type="button" class="w-full p-2 m-2 custom-button rounded-lg">Deja que la IA te ayude con tu descripción</button>
             </div>
+            <button type="submit" class="w-full p-2 m-2 custom-button rounded-lg">Enviar</button>
         </form>
     </div>
 </div>
 <footer class="fixed bottom-0 text-center items-center bg-gradient-to-t from-blue-100 to-transparent w-full py-4">
     <p class="text-center items-center ">&copy; 2024 Iconekta Inc. Todos los derechos reservados.</p>
 </footer>
+<script>
+    const areaCodes = {
+        Bolivia: ['+591'],
+        Argentina: ['+54'],
+        Chile: ['+56']
+        // Agregar más códigos de área según sea necesario
+    };
+
+    function updateAreaCodes() {
+        const countrySelect = document.getElementById('pais');
+        const areaCodeSelect = document.getElementById('codigo-area');
+        const selectedCountry = countrySelect.value;
+
+        // Limpiar las opciones actuales
+        areaCodeSelect.innerHTML = '';
+
+        // Agregar nuevas opciones basadas en el país seleccionado
+        if (areaCodes[selectedCountry]) {
+            areaCodes[selectedCountry].forEach(code => {
+                const option = document.createElement('option');
+                option.value = code;
+                option.textContent = code;
+                areaCodeSelect.appendChild(option);
+            });
+        }
+    }
+
+    // Inicializar los códigos de área al cargar la página
+    document.addEventListener('DOMContentLoaded', updateAreaCodes);
+
+    function toggleAccordion() {
+        const content = document.querySelector('.accordion-content');
+        content.style.display = content.style.display === 'none' || content.style.display === '' ? 'block' : 'none';
+    }
+</script>
 </body>
 </html>
