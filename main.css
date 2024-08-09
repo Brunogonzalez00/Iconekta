@@ -17,14 +17,34 @@
 @layer utilities {
     .bg-custom-pattern {
         background-image: url("./Logos/bg.jpg");
-        background-size: cover;
+        background-size: auto;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
 }
 
-.scale-105{
-    transform: scale(1.05);
-    transition: transform 0.5s ease;
+article {
+    opacity: 0;
+    transform: scale(0.25);
+    transition: opacity 1s, transform 1s;
 }
 
+article.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    /* Tus estilos aquí */
+}
+
+/* Estilos para pantallas medianas (tabletas) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    /* Tus estilos aquí */
+}
+
+/* Estilos para pantallas grandes (desktop) */
+@media (min-width: 1025px) {
+    /* Tus estilos aquí */
+}

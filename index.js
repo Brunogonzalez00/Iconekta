@@ -1,22 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.intersectionRatio > 0.7) { // Si más del 70% del elemento está visible
-                // Remover la clase scale-110 de todos los elementos
-                document.querySelectorAll('.scale-on-scroll').forEach(el => {
-                    el.classList.remove('scale-105');
-                });
+document.addEventListener("DOMContentLoaded", function() {
+    let observer = new IntersectionObserver(onChange, {
+        rootMargin: "-60px",
+        threshold: 0.4
+    });
 
-                // Agregar la clase scale-110 al elemento actual
-                entry.target.classList.add('scale-105');
+    document.querySelectorAll('article').forEach(el => observer.observe(el));
+
+    function onChange(changes, observer) {
+        changes.forEach(change => {
+            if (change.intersectionRatio >= 0.4) {
+                change.target.classList.add('in-view');
             } else {
-                // Si menos del 70% del elemento está visible, quitar la clase
-                entry.target.classList.remove('scale-105');
+                change.target.classList.remove('in-view');
             }
         });
-    }, { threshold: Array.from({length: 101}, (_, i) => i / 100) });
+    }
 
-    document.querySelectorAll('.scale-on-scroll').forEach((element) => {
-        observer.observe(element);
-    });
+    // Ajustar el código según el tamaño de la pantalla
+    if (window.innerWidth <= 600) {
+        // Código para pantallas pequeñas (móviles)
+    } else if (window.innerWidth <= 1024) {
+        // Código para pantallas medianas (tabletas)
+    } else {
+        // Código para pantallas grandes (desktop)
+    }
 });
