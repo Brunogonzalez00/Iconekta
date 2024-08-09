@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@midudev/tailwind-animations": "^0.0.7",
     "lucide": "^0.417.0"
   },
   "devDependencies": {
