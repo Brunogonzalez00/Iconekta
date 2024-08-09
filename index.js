@@ -6,14 +6,22 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelectorAll('article').forEach(el => observer.observe(el));
 
+    let lastScrollTop = 0;
+
     function onChange(changes, observer) {
+        let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
         changes.forEach(change => {
             if (change.intersectionRatio >= 0.4) {
                 change.target.classList.add('in-view');
             } else {
-                change.target.classList.remove('in-view');
+                if (currentScrollTop < lastScrollTop) {
+                    change.target.classList.remove('in-view');
+                }
             }
         });
+
+        lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
     }
 
     // Ajustar el código según el tamaño de la pantalla
